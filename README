@@ -1,0 +1,7 @@
+Lintian checks for Ruby-PKG
+==============================
+
+
+ * copy ruby.pm and ruby.desc to lintian/checks
+ * add `ruby` to debian/main.profile
+ * run lintian
