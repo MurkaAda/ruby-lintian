@@ -1,0 +1,32 @@
+Check-Script: ruby
+Author: Jonas Genannt <jonas.genannt@capi2name.de>
+Type: binary
+Info: Checks various Ruby PKG Team stuff
+Needs-Info: bin-pkg-control, index, scripts, unpacked
+
+Tag: ruby-depends-on-ruby1.8
+Severity: serious
+Certainty: certain
+Info: This package depends on ruby1.8, but ruby 1.8 is end of live.
+ Please check your package against newer Ruby versions and update
+ your dependencies to "ruby | ruby-interpreter".
+ .
+ https://wiki.debian.org/Teams/Ruby/Packaging
+
+Tag: ruby-depends-on-specific-ruby-version
+Severity: wishlist
+Certainty: certain
+Info: This package depends on a specific ruby version.
+ Packages should not depend on a specific ruby version, it should use generic
+ "ruby | ruby-interpreter" as dependency.
+ .
+ https://wiki.debian.org/Teams/Ruby/Packaging
+
+Tag: ruby-library-old-package-name-schema
+Severity: serious
+Certainty: certain
+Info: Your ruby library package name does not fit our Jessie release goals.
+ The package name does not fit our new naming schema. Ruby libraries should
+ named like `ruby-foo`.
+ .
+ https://wiki.debian.org/Teams/Ruby/Packaging
