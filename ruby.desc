@@ -7,9 +7,10 @@ Needs-Info: bin-pkg-control, index, scripts, unpacked
 Tag: ruby-depends-on-ruby1.8
 Severity: serious
 Certainty: certain
-Info: This package depends on ruby1.8, but ruby 1.8 is end of live.
- Please check your package against newer Ruby versions and update
- your dependencies to "ruby | ruby-interpreter".
+Info: This package depends on ruby1.8, but ruby 1.8 is at its end of life.
+ Please check your package against newer Ruby versions and update your
+ dependencies to "ruby | ruby-interpreter", or in the worst case, to a newer
+ Ruby version.
  .
  https://wiki.debian.org/Teams/Ruby/Packaging
 
@@ -17,16 +18,19 @@ Tag: ruby-depends-on-specific-ruby-version
 Severity: wishlist
 Certainty: certain
 Info: This package depends on a specific ruby version.
- Packages should not depend on a specific ruby version, it should use generic
- "ruby | ruby-interpreter" as dependency.
+ Packages should not depend on a specific ruby version if possible, because
+ this makes it harder to drop support for obsolete Ruby versions. Ideally
+ packages should declare a dependency on Ruby using a generic
+ "ruby | ruby-interpreter".
  .
  https://wiki.debian.org/Teams/Ruby/Packaging
 
 Tag: ruby-library-old-package-name-schema
 Severity: serious
 Certainty: certain
-Info: Your ruby library package name does not fit our Jessie release goals.
- The package name does not fit our new naming schema. Ruby libraries should
- named like `ruby-foo`.
+Info: Your ruby library package name does not fit the Debian standards for Ruby.
+ The package name does not fit the current naming scheme for Ruby packages.
+ Ruby libraries should named like `ruby-foo`. Packages named libfoo-ruby* are
+ deprecated.
  .
  https://wiki.debian.org/Teams/Ruby/Packaging
