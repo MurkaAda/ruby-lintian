@@ -25,7 +25,7 @@ sub run {
             tag 'ruby-depends-on-ruby1.8';
         }
 
-        if ($str_deps and $str_deps->matches(qr/^ruby[0-9.]+$/o)) {
+        if ($str_deps and $str_deps->matches(qr/^ruby[0-9.]+$/o) and !$str_deps->implies("ruby1.8")) {
             tag 'ruby-depends-on-specific-ruby-version';
         }
     }
