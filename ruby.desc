@@ -15,7 +15,7 @@ Info: This package depends on ruby1.8, but ruby 1.8 is at its end of life.
  https://wiki.debian.org/Teams/Ruby/Packaging
 
 Tag: ruby-depends-on-specific-ruby-version
-Severity: wishlist
+Severity: normal
 Certainty: certain
 Info: This package depends on a specific ruby version.
  Packages should not depend on a specific ruby version if possible, because
