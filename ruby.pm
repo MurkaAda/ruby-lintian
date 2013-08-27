@@ -15,7 +15,7 @@ sub run {
 
         my $pkg_description = $info->field('description');
         if ($pkg_description) {
-          if ($pkg =~ /^lib.*-ruby.*/ and $pkg_description !~ /transitional/im ) {
+          if ($pkg =~ /^lib.*-ruby.*/ and !$info->is_pkg_class('transitional') ) {
             tag 'ruby-library-old-package-name-schema';
           }
         }
@@ -25,7 +25,7 @@ sub run {
             tag 'ruby-depends-on-ruby1.8';
         }
 
-        if ($str_deps and $str_deps->implies("ruby1.9.1")) {
+        if ($str_deps and $str_deps->matches(qr/^ruby[0-9.]+$/o)) {
             tag 'ruby-depends-on-specific-ruby-version';
         }
     }
